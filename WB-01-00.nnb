@@ -1,0 +1,594 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# Web Applications Development - Fall 2024\n## Week 01 Class 00"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### JavaScript Basics"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Basic Print Statement: console.log()"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(\"Hello, World!\")"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Complex console.log statement\nconsole.log(\"Hello, World!\", \"This is a complex console.log statement containg multiple arguments\")\n\n// Complex console.log statement with variables\nlet place = \"World\"\nconsole.log(\"Hello, \" + place + \"!\")\n\n// Complex console.log statement with variables and string interpolation\nconsole.log(`Hello, ${place}!`)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Print today's date\nconsole.log(new Date().toDateString())\n\n// Print today's date with a custom format\nlet date = new Date()\nconsole.log(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`)\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Fri Aug 23 2024",
+                                "Today is day 23 of the month 8, in the year 2024",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 1: Print the name of the person sitting next to you\n// Write your code here"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 2: Print todays date in the format \"Today is day 24 of the month 12, in the year 2020\"\n// Write your code here\n\n// console.log(\n//   `Today is day ${date.getDate()} of the month ${\n//     date.getMonth() + 1\n//   }, in the year ${date.getFullYear()}`\n// );"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Ternary Operator"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Ternary operator: condition ? expr1 : expr2\n// If the condition is true, expr1 is returned, otherwise expr2 is returned\n\n// Example 1\nlet age = 20\nlet message = age >= 18 ? \"You are an adult\" : \"You are a child\"\nconsole.log(message)\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 2\nlet isRaining = true\nlet weather = isRaining ? \"It's raining\" : \"It's not raining\"\nconsole.log(weather)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Exercise 1: Write a ternary operator to check if a number is even or odd\n// Write your code here"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Exercise 2: Write a ternary operator to check if a number is positive, negative or zero\n// Write your code here"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Exercise 3: Write a ternary operator to convert a number to a string with correct ordinal suffix, Ex. 1 -> 1st, 2 -> 2nd, 3 -> 3rd, 4 -> 4th, 5 -> 5th, etc.\n// Write your code here"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Destructuring"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.\n\n// Example 1\nconst person = { firstName: \"John\", age: 30 }\nconst { firstName, age } = person\nconsole.log(firstName)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 2\nconst numbers = [1, 2, 3, 4, 5]\n\nconst [first, second, third] = numbers\n\nconsole.log(third)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "3",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 3\n// Destructuring with skipping. In this example, we are skipping the second element in the array.\n// This code may not work in this notebook environment. You can try it in your local environment or an online code editor like https://www.jsplayground.dev/\n\nlet colors = ['red', 'green', 'blue', 'yellow', 'pink'];\n\n// Destructuring with skipping\nlet [firstColor, , thirdColor] = colors;\n\nconsole.log(firstColor); // red\nconsole.log(thirdColor); // blue"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 4\n\nlet data = {\n    name: 'John Doe',\n    age: 30,\n    contact: {\n      email: 'john.doe@example.com',\n      phone: '123-456-7890',\n    },\n    hobbies: ['reading', 'gaming', 'coding'],\n  };\n  \n  // Destructuring\n  let { name, contact: { email, phone }, hobbies: [hobby1, hobby2] } = data;\n  \n  console.log(name); \n  console.log(email);\n  console.log(phone);\n  console.log(hobby1);\n  console.log(hobby2);\n\n  // You can also get email directly from data object by using data.contact.email\n  console.log(data.contact.email)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 1: Destructure the following object to get the value of the key \"title\"\nlet book = { title: \"JavaScript for Beginners\", author: \"John Doe\" }"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 2: Destructure the following object to get the value of the key \"color\"\nlet car = { make: \"Toyota\", model: \"Corolla\", color: \"red\" }"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 3: Destructure the following object to print Hello, John Doe! I have sent you an email at joh.doe@example.com\nlet person = { firstName: \"John\", lastName: \"Doe\", email: \"john.doe@example.com\" }"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 4: Destructure the list of colors to get the first and last color\nlet colors = ['red', 'green', 'blue', 'yellow', 'pink']"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Spread Syntax"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "The spread syntax is used to spread the elements of an array or the properties of an object. It is useful for creating copies of arrays or objects, combining arrays or objects, and passing an array as arguments to a function."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 1: Spreading elements of an array\n\nconst arr1 = [1, 2, 3];\nconst arr2 = [...arr1, 4, 5, 6];\nconsole.log(arr2);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 2: Combining arrays\n\nconst arr1 = [1, 2, 3];\nconst arr2 = [4, 5, 6];\nconst combined = [...arr1, ...arr2];\nconsole.log(combined);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 3: Spreading properties of an object\n\nconst obj1 = { a: 1, b: 2 };\nconst obj2 = { ...obj1, c: 3 };\nconst obj3 = { d: 4, e: 5 };\nconst obj4 = { ...obj2, ...obj3 };\nconsole.log(obj2);\nconsole.log(obj4);"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 4: Passing array elements as function arguments\n\nconst numbers = [1, 2, 3];\nfunction add(a, b, c) {\n  return a + b + c;\n}\nconsole.log(add(...numbers));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "6",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 1: Using Spread Syntax with Arrays\n// 1.\tCreate an array called fruits containing “apple”, “banana”, and “orange”.\n// 2.\tCreate another array called moreFruits and use the spread syntax to include all elements from fruits and add “grape” and “kiwi” to it."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 2: Using Spread Syntax with Objects\n// 1.\tCreate an object called person with properties name: \"John\" and age: 25.\n// 2.\tCreate another object called employee and use the spread syntax to include all properties from person and add a new property jobTitle: \"Developer\"."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 3: Cloning and Modifying Objects with Spread Syntax\n// 1.\tCreate an object called original with properties a: 1, b: 2, and c: 3.\n// 2.\tCreate a new object called clone that is a clone of original but with the property b changed to 20.\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 4: Combining Objects with Spread Syntax\n\n// 1.   Create two objects, user with properties name: \"Alice\" and age: 30, and contact with properties email: \"alice@example.com\" and phone: \"123-456-7890\".\n// 2.\tCombine these objects into a new object called userInfo using the spread syntax."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Rest Syntax"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "The rest syntax is used to collect multiple elements and condense them into a single array. It is useful for functions with variable numbers of arguments and for destructuring arrays or objects where you want to capture the remaining items."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 1: Using rest parameters in functions for variable number of arguments\n\nfunction count(...numbers) {\n    console.log(numbers);\n    return numbers.length;   // Using the length property to return the number of arguments\n}\n\nconsole.log(sum(1, 2, 3)); \n\nconsole.log(sum(1, 2, 3, 4));"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 2: Destructuring arrays with rest syntax\n\nconst [first, second, ...rest] = [1, 2, 3, 4, 5];\nconsole.log(first); // 1\nconsole.log(second); // 2\nconsole.log(rest); // [3, 4, 5]"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                "2",
+                                "[ 3, 4, 5 ]",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 3: Destructuring objects with rest syntax\n// This code may not work in this notebook environment. You can try it in your local environment or an online code editor like https://www.jsplayground.dev/\n\nconst { a, b, ...rest } = { a: 1, b: 2, c: 3, d: 4 };\n\nconsole.log(a); // 1\nconsole.log(b); // 2\nconsole.log(rest); // { c: 3, d: 4 }\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 1: \n// 1. Create an array called numbers containing numbers 1 through 5.\n// 2. Use destructuring and the rest syntax to assign the first element to a variable called first and the rest of the elements to a variable called restOfNumbers.\n\n// Your code here"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 2: Exercise 3: Using Rest Syntax in Function Parameters\n// Write a function called sum that takes any number of arguments and returns their sum. Use the rest syntax to collect the arguments.\n\n// Your code here"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 3: Nested Destructuring with Rest/Spread Syntax to flatten an array\n// 1. Create an array numbers1 with values [1, 2, [3, 4]].\n// 2. Use spread syntax to create a new array flatNumbers that flattens numbers1 by one level (so the result should be [1, 2, 3, 4]).\n// 3. Try different values in numbers1 to test your code. Ex. [ [1, 2], 3, [4, 5]], [1, [2, 3] , [4, 5] ]"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Arrow Function"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Arrow functions in JavaScript provide a concise syntax for writing function expressions. For now, use them as shorthands to write some quick function expressions."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 1: A simple arrow function to add two numbers\n\nconst add = (a, b) => a + b;\nconsole.log(add(2, 3));"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Example 2: Arrow Function with No Parameters that returns a greeting message\n\nconst greet = () => 'Hello, World!';\nconsole.log(greet()); // Output: Hello, World!\n\n// When there are no parameters, empty parentheses () are used."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 3: Arrow Function with One Parameter\n\nconst square = x => x * x;\nconsole.log(square(4));\n\n// When there is a single parameter, parentheses around the parameter can be omitted."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 4: Arrow Function with a Block Body\n\nconst multiplyAndAdd = (a, b) => {\n    const product = a * b;\n    const sum = a + b;\n    return { product, sum };\n  };\n  console.log(multiplyAndAdd(2, 3)); // Output: { product: 6, sum: 5 }\n\n// When the function body contains multiple statements, curly braces {} are used, and an explicit return is needed."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 5: Using Arrow Functions with Array Methods\n\nconst numbers = [1, 2, 3, 4, 5];\n\n// map: Creates a new array by applying the arrow function to each element.\nconst doubled = numbers.map(n => n * 2);\nconsole.log(doubled); // Output: [2, 4, 6, 8, 10]\n\n// filter: Creates a new array with elements that pass the test implemented by the arrow function.\nconst evens = numbers.filter(n => n % 2 === 0);\nconsole.log(evens); // Output: [2, 4]\n\n// reduce: Applies the arrow function against an accumulator and each element to reduce the array to a single value.\nconst sum = numbers.reduce((acc, n) => acc + n, 0);\nconsole.log(sum); // Output: 15\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 6: Combining Arrow Functions to transform an array\n\nconst numbers = [1, 2, 3, 4, 5];\n\nconst processNumbers = numbers\n  .map(n => n * 3)\n  .filter(n => n % 2 === 0)\n  .reduce((acc, n) => acc + n, 0);\n\nconsole.log(processNumbers);\n\n// Question: What are map, filter and reduce each doing in the above example?"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 1.a: Convert the following Function Expression to Arrow Functions\n\nconst greet = function(name) {\n    return `Hello, ${name}!`;\n  };\n  \n  console.log(greet('Alice')); \n\n// Your code here to define greet2 as an arrow function\nconsole.log(greet2('Alice'));"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 1.b: Convert the following Function Expression to Arrow Functions\n\nconst multiply = function(a, b) {\n    return a * b;\n  };\n  \n  console.log(multiply(4, 5));\n\n// Your code here to define multiply2 as an arrow function\nconsole.log(multiply2(4, 5));"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 1.c: Convert the following Function Expression to Arrow Functions\n\nconst isEven = function(num) {\n    return num % 2 === 0;\n  };\n  \n  console.log(isEven(4));\n  console.log(isEven(5));\n\n// Your code here to define isEven2 as an arrow function\nconsole.log(isEven2(4));"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 3: Complete the missing Arrow Function to get the desired output\n\nconst person = { name: 'Alice', age: 25 };\n\nconst greetPerson = /* Your Arrow Function Here */\nconsole.log(greetPerson(person)); // Output: Hello, Alice! You are 25 years old."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 4: Default Parameters with Arrow Functions: Write an arrow function that calculates the area of a rectangle. If only one argument is provided, assume it’s a square.\n\nconst calculateArea = // Your Arrow Function Here;\nconsole.log(calculateArea(5, 10)); // Output: 50\nconsole.log(calculateArea(7)); // Output: 49"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 5: Higher order function with Arrow function\n// repeat is a higher order function that takes a function and a number of times to repeat the function as arguments.\n\nconst repeat = (fn, times) => {\n    for (let i = 0; i < times; i++) {\n      fn();\n    }\n  };\n  \n  const sayHello = () => console.log('Hello!');\n  \n// Write a call to repeat that will log \"Hello!\" 5 times\n// Your code here"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Exercise 6: Higher order functions with Arrow Functions: \n// Write a higher order function 'evaluate' that takes an array of numbers and a function as arguments. The higher order function applies function on the array and returns a boolean value. Print 'Yay' is boolean values is true and 'Nay' when boolena value is false.\n// Try with different functions like containsEven, containsOdd, containsZero, containsPositive etc.\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Promises"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "/* setTimeout Function:\n- setTimeout is a built-in JavaScript function that sets a timer. When the timer expires, it executes a provided callback function.\n- The syntax is setTimeout(callback, delay), where callback is the function to execute and delay is the time in milliseconds to wait before executing the callback.\n*/\nsetTimeout(() => {\n    const success = true; // Change this to false to see the reject case\n    if (success) {\n      console.log('Success!');\n    } else {\n      console.log('Failure.');\n    }\n  }, 2000); // 2 seconds delay\n\nconsole.log('This message is logged first');\n\n// This is a simulation of an asynchronous operation that takes 2 seconds to complete. The message \"This message is logged first\" is logged immediately, while the success or failure message of the asynchronous process is logged after 2 seconds.\n// Asynchronous operations are common in web development, such as fetching data from a server, reading files, or handling user interactions.\n// An asynchronous operation allows the program to continue executing other tasks while waiting for the operation to complete."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 1: Creating a basic promise\n// This example demonstrates creating a simple promise that resolves after a delay.\n// A promise is an object representing the eventual completion or failure of an asynchronous operation. It can be in one of the following states: pending, fulfilled, or rejected.\n\nconst myPromise = new Promise((resolve, reject) => {\n    // Simulate an asynchronous operation using setTimeout\n    setTimeout(() => {\n      const success = true; // Change this to false to see the reject case\n      if (success) {\n        resolve('Promise resolved successfully!');\n      } else {\n        reject('Promise rejected.');\n      }\n    }, 2000); // 2 seconds delay\n  });\n  \n// Using the promise\nmyPromise\n    .then(result => {\n      console.log(result); // Output: Promise resolved successfully!\n    })\n    .catch(error => {\n      console.error(error); // Output: Promise rejected.\n    });\n\n/* Explanation:\n- A new Promise object is created. The executor function inside the Promise constructor takes two arguments: resolve and reject.\n- The setTimeout function simulates an asynchronous operation that takes 2 seconds. This asynchronous operation is wrapped inside the promise.\n- If the operation is successful (indicated by the success variable), the promise is resolved with a success message. Otherwise, the promise is rejected with an error message.\n- The .then() method handles the resolved case, and the .catch() method handles the rejected case.\n*/"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Example 2: Chaining Promises\n// This example demonstrates chaining two promises to perform sequential asynchronous operations.\n\n// Function that returns a promise resolving after 1 second\nconst firstTask = () => {\n    return new Promise((resolve, reject) => {\n      setTimeout(() => {\n        console.log('First task completed');\n        resolve('First result');\n      }, 1000);\n    });\n  };\n  \n  // Function that returns a promise resolving after another 2 second\n  const secondTask = (firstResult) => {\n    return new Promise((resolve, reject) => {\n      setTimeout(() => {\n        console.log('Second task completed');\n        resolve(`${firstResult} -> Second result`);\n      }, 2000);\n    });\n  };\n  \n  // Chaining the promises\n  firstTask()\n    .then(result => {\n      console.log(result); // Output: First result\n      return secondTask(result);\n    })\n    .then(finalResult => {\n      console.log(finalResult); // Output: First result -> Second result\n    })\n    .catch(error => {\n      console.error('An error occurred:', error);\n    });\n\n/* Explanation:\n- The firstTask function returns a promise that resolves after 1 second with a message “First result”.\n- The secondTask function takes the result of the first task as an argument and returns a promise that resolves after another 1 second with a message that includes the result of the first task.\n- The firstTask() is called, and its result is passed to secondTask() using the .then() method.\n- The final result of the chain is logged to the console in the second .then() method.\n*/\n\n// Note: Some console.log statements may not print in .nnb environment. Try this code code snippet in https://playcode.io/javascript\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "/*Promise Chaining:\n\nPromise chaining is used in JavaScript to handle multiple asynchronous operations in a sequential manner. Here are some key reasons why we use promise chaining:\n\n\t1.\tReadability and Maintainability:\n\t- Promise chaining makes the code more readable and maintainable compared to nested callbacks (also known as “callback hell”).\n\t- Each .then() in the chain represents a step in the sequence, making it easier to follow the flow of asynchronous operations.\n\t2.\tSequential Execution:\n\t- Promise chaining ensures that each asynchronous operation is executed in sequence. The next .then() in the chain only executes after the previous promise has resolved.\n\t- This is crucial when operations need to be performed in a specific order, such as fetching data from a server, processing it, and then saving it.\n\t3.\tError Handling:\n\t- Errors in any part of the promise chain can be caught and handled using a single .catch() at the end of the chain.\n\t- This centralized error handling improves the robustness of the code and simplifies debugging.\n\t4.\tReturning Values:\n\t- Each .then() in the chain can return a value (or another promise) that is passed to the next .then() in the chain.\n\t- This allows for easy manipulation and transformation of data through the sequence of asynchronous operations.\n*/"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Example 3: Fetching and Processing Data\n\n//Here’s a practical example where promise chaining is used to fetch data from an API, process it, and then save it:\n\n// Function to fetch data from an API\nconst fetchData = () => {\n    return fetch('https://jsonplaceholder.typicode.com/posts/1')\n      .then(response => response.json())\n      .then(data => {\n        console.log('Data fetched:', data);\n        return data;\n      });\n  };\n  \n  // Function to process the fetched data\n  const processData = (data) => {\n    return new Promise((resolve, reject) => {\n      setTimeout(() => {\n        const processedData = {\n          ...data,\n          processed: true\n        };\n        console.log('Data processed:', processedData);\n        resolve(processedData);\n      }, 1000);\n    });\n  };\n  \n  // Function to save the processed data\n  const saveData = (processedData) => {\n    return new Promise((resolve, reject) => {\n      setTimeout(() => {\n        console.log('Data saved:', processedData);\n        resolve('Save successful');\n      }, 1000);\n    });\n  };\n  \n  // Chaining the promises\n  fetchData()\n    .then(data => {\n      return processData(data);\n    })\n    .then(processedData => {\n      return saveData(processedData);\n    })\n    .then(saveMessage => {\n      console.log(saveMessage); // Output: Save successful\n    })\n    .catch(error => {\n      console.error('An error occurred:', error);\n    });"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#### Async/Await"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// Example 1: Fetching Data from an API\n\n// In this example, we’ll demonstrate how to use async/await to fetch data from a public API and handle the response.\n\n// Function to fetch data using async/await\nasync function fetchData() {\n    try {\n      // Await the fetch call, which returns a promise\n      const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');\n  \n      // Await the parsing of the response body as JSON\n      const data = await response.json();\n  \n      // Log the fetched data\n      console.log('Fetched Data:', data);\n    } catch (error) {\n      // Handle any errors that occur during the fetch or parsing process\n      console.error('An error occurred:', error);\n    }\n  }\n  \n// Call the async function without awaiting it\nconsole.log('Calling fetchData without await:');\nfetchData();\nconsole.log('This line prints first before API response');"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// Now call the async function with await\nconsole.log('Calling fetchData with await:');\nawait fetchData();\nconsole.log('This line prints after API response');"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "/* Explanation:\n1.\tasync Keyword:\n\t•\tThe fetchData function is declared with the async keyword, which allows the use of await inside the function.\n2.\tawait Keyword:\n\t•\tThe await keyword pauses the execution of the fetchData function until the fetch promise is resolved.\n\t•\tSimilarly, await is used to pause execution until the response.json() promise is resolved, which parses the JSON data.\n3.\tError Handling:\n\t•\tA try...catch block is used to handle any errors that might occur during the fetch operation or while parsing the JSON data.\n4.\tCalling the Function:\n\t•\tThe fetchData function is called at the end. Since it is an async function, it returns a promise, but we don’t need to chain .then() or .catch() when using await inside the function.\n*/"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "//Example 2: Sequential Asynchronous Operations\n\n// In this example, we’ll use async/await to perform a series of asynchronous operations in sequence, such as simulating fetching user data, processing it, and then saving it.\n\n// Simulate fetching user data from an API\nasync function fetchUserData(userId) {\n    console.log('Fetching user data...');\n    return new Promise((resolve) => {\n      setTimeout(() => {\n        resolve({ userId, name: 'John Doe', age: 30 });\n      }, 2000); // Simulate a 2-second delay\n    });\n  }\n  \n// Simulate processing user data\nasync function processUserData(userData) {\n  console.log('Processing user data...');\n  return new Promise((resolve) => {\n    setTimeout(() => {\n      const processedData = { ...userData, processed: true };\n      resolve(processedData);\n    }, 1000); // Simulate a 1-second delay\n  });\n}\n  \n// Simulate saving user data\nasync function saveUserData(processedData) {\n  console.log('Saving user data...');\n  return new Promise((resolve) => {\n    setTimeout(() => {\n      resolve('User data saved successfully!');\n    }, 500); // Simulate a 0.5-second delay\n  });\n}\n  \n// Main function to execute the sequence\nasync function main() {\n  try {\n    // Fetch, process, and save user data in sequence\n    const userData = await fetchUserData(1);\n    console.log('User Data:', userData);\n\n    const processedData = await processUserData(userData);\n    console.log('Processed Data:', processedData);\n\n    const saveMessage = await saveUserData(processedData);\n    console.log(saveMessage);\n  } catch (error) {\n    console.error('An error occurred:', error);\n  }\n}\n  \n// Call the main function\nmain();"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Homework\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Homework 1: Print the current time in the format \"The time is 12:30:15\"\n "
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Homework 2: Print the today's date in the format \"Today is 24th December 2020\". Make sure the date is displayed in the correct ordinal format (e.g. 1st, 2nd, 3rd, 4th, 5th, etc.)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Homework 3: Write a function called greet that takes a name as an argument and returns a greeting message. The function should use a default value of \"World\" for the name parameter if no argument is provided."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Homework 4: Write a function to flatten an array using the rest/spread syntax and recursive function call"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "/* Homework 5: Rest and Spread Operators\n\nProblem:\n\nYou are given an array of numbers and an object representing a person with their name, age, and hobbies. Write two functions:\n\n\t1.\tcombineArrays: This function takes two arrays as arguments and returns a single array that combines both arrays using the spread operator.\n\t2.\taddHobbies: This function takes a person object and an array of hobbies as arguments. It returns a new person object with the hobbies added to the existing hobbies using the spread operator.\n\nAdditionally, write a function sumNumbers that takes any number of numerical arguments and returns their sum using the rest operator.\n\nInstructions:\n\n\t1.\tWrite the combineArrays function.\n\t2.\tWrite the addHobbies function.\n\t3.\tWrite the sumNumbers function.\n\t4.\tTest your functions with the provided test cases.\n*/\n\n\n// Write your code here containing functions: combineArrays, addHobbies, sumNumbers\n\n//Test Cases:\n\n// combineArrays function test\nconst array1 = [1, 2, 3];\nconst array2 = [4, 5, 6];\nconsole.log(combineArrays(array1, array2)); // Output: [1, 2, 3, 4, 5, 6]\n\n// addHobbies function test\nconst person = { name: 'Alice', age: 25, hobbies: ['reading', 'swimming'] };\nconst newHobbies = ['cycling', 'hiking'];\nconsole.log(addHobbies(person, newHobbies)); \n// Output: { name: 'Alice', age: 25, hobbies: ['reading', 'swimming', 'cycling', 'hiking'] }\n\n// sumNumbers function test\nconsole.log(sumNumbers(1, 2, 3, 4, 5)); // Output: 15\nconsole.log(sumNumbers(10, 20, 30)); // Output: 60"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "/*\nHomework 6: Functions\nProblem:\n\nWrite a function calculateStatistics that takes an array of numbers as an argument and returns an object with the following properties:\n\n\t1.\tmean: The average of all the numbers.\n\t2.\tmedian: The middle value when the numbers are sorted.\n\t3.\tmode: The number that appears most frequently. If there are multiple modes, return all of them in an array.\n\nWrite a function printStatistics that takes the statistics object returned by calculateStatistics and prints each statistic in a readable format.\n\nInstructions:\n\n\t1.\tWrite the calculateStatistics function.\n\t2.\tWrite the printStatistics function.\n\t3.\tTest your functions with the provided test cases.\n*/\n\n// Write your code here containing functions: calculateStatistics, printStatistics\n\n//Test Cases:\n\n// calculateStatistics function test\nconst numbers = [1, 2, 4, 3, 2];\nconst stats = calculateStatistics(numbers);\nconsole.log(stats);\n// Output: { mean: 2.4, median: 2, mode: [2] }\n\nconst numbers2 = [1, 4, 2, 4, 1, 5, 6];\nconst stats2 = calculateStatistics(numbers2);\nconsole.log(stats2);\n// Output: { mean: 3.2857142857142856, median: 4, mode: [1, 4] }\n\n// printStatistics function test\nprintStatistics(stats);\n// Output:\n// Mean: 2.4\n// Median: 2\n// Mode: 2\n\nprintStatistics(stats2);\n// Output:\n// Mean: 3.2857142857142856\n// Median: 4\n// Mode: 1, 4"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "/*\nHomework 7: Arrow Functions\n\nProblem:\n\nYou are given an array of student objects, where each object contains the student’s name and their scores in three subjects: Math, English, and Science. Write the following arrow functions:\n\n\t1.\tgetStudentNames: This function takes the array of students and returns an array of student names.\n\t2.\tcalculateAverageScore: This function takes a student object and returns their average score across all subjects.\n\t3.\tgetTopStudent: This function takes the array of students and returns the student with the highest average score.\n\t4.\tfilterPassingStudents: This function takes the array of students and a minimum passing average score. It returns an array of students who have an average score greater than or equal to the minimum passing score.\n\nInstructions:\n\n\t1.\tWrite the getStudentNames function.\n\t2.\tWrite the calculateAverageScore function.\n\t3.\tWrite the getTopStudent function.\n\t4.\tWrite the filterPassingStudents function.\n\t5.\tTest your functions with the provided test cases.\n*/\n\n// Write your code here containing functions: getStudentNames, calculateAverageScore, getTopStudent, filterPassingStudents\nconst getStudentNames = (students) => {\n    return students.map(student => student.name);\n  };\n  \n  const calculateAverageScore = (student) => {\n    const total = student.math + student.english + student.science;\n    return total / 3;\n  };\n  \n  const getTopStudent = (students) => {\n    return students.reduce((topStudent, student) => {\n      const studentAverage = calculateAverageScore(student);\n      const topStudentAverage = calculateAverageScore(topStudent);\n      return studentAverage > topStudentAverage ? student : topStudent;\n    });\n  };\n  \n  const filterPassingStudents = (students, passingScore) => {\n    return students.filter(student => calculateAverageScore(student) >= passingScore);\n  };\n\n//Test Cases:\nconst students = [\n    { name: 'Alice', math: 90, english: 85, science: 88 },\n    { name: 'Bob', math: 75, english: 80, science: 72 },\n    { name: 'Charlie', math: 95, english: 90, science: 93 },\n    { name: 'David', math: 60, english: 65, science: 70 }\n  ];\n  \n  // Test getStudentNames function\n  console.log(getStudentNames(students)); \n  // Output: ['Alice', 'Bob', 'Charlie', 'David']\n  \n  // Test calculateAverageScore function\n  console.log(calculateAverageScore(students[0])); \n  // Output: 87.66666666666667\n  \n  // Test getTopStudent function\n  console.log(getTopStudent(students)); \n  // Output: { name: 'Charlie', math: 95, english: 90, science: 93 }\n  \n  // Test filterPassingStudents function\n  console.log(filterPassingStudents(students, 80)); \n  // Output: [{ name: 'Alice', math: 90, english: 85, science: 88 }, { name: 'Charlie', math: 95, english: 90, science: 93 }]"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "/* Homework 8: Using JavaScript Fetch Method with async & await to Make a GET Request and Check JSON Output\n\nProblem:\n\nYou are required to create a small JavaScript program that fetches data from a public API using the Fetch API method combined with async and await. You will make a GET request to retrieve data, parse the JSON response, and then log specific details from the JSON output to the console.\n\nInstructions:\n\n\t1.\tFetch Data from API:\n\t•\tUse the fetch method along with async and await to make a GET request to the following public API endpoint:\n\t•\tURL: https://jsonplaceholder.typicode.com/users\n\t2.\tParse the JSON Response:\n\t•\tOnce the data is fetched, use await to parse the response into JSON format.\n\t3.\tExtract and Log Specific Details:\n\t•\tAfter parsing the JSON, extract and log the following details for each user:\n\t•\tname\n\t•\temail\n\t•\taddress (including street, suite, city, and zipcode)\n\t4.\tHandle Errors:\n\t•\tImplement error handling using a try...catch block. If there is an error during the fetch operation (e.g., network error, invalid JSON), log an appropriate error message to the console.\n*/\n\n// Write your code here\n\n/* Sample Output:\nName: Leanne Graham\nEmail: Sincere@april.biz\nAddress: Kulas Light, Apt. 556, Gwenborough, 92998-3874\n\nName: Ervin Howell\nEmail: Shanna@melissa.tv\nAddress: Victor Plains, Suite 879, Wisokyburgh, 90566-7771\n\n...\n\n[Repeat for all users]\n*/\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
