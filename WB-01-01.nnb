@@ -1,0 +1,137 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# Web Applications Development - Fall 2024\n## Week 01 Class 01\n\n### Setting Up First React JS Project"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Open CMD\n\n```\nnpm create vite@latest my-react-app ( Choose Javascript )\ncd my-react-app\nnpm intall\nnpm run dev\n```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercise\n\nGo through the strcuture of the app folder and understand how the files are structured. Following images explain React App Structure and React Rendering Flow"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "![alt text](assets/react-app-structure.jpeg)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "![alt text](assets/react-rendering-flow.jpeg)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "\n### Example 1\n\n1. **Create a React Component:**\n   - Using the provided code, create a React component named `Index`.\n   - The component should display a simple \"Hello World\" message within an `<h1>` tag.\n\n2. **Render the Component:**\n   - Import and render the `Index` component as the main component in your React application.\n\n\n```javascript\nimport React from \"react\";\n\nfunction Index() {\n  return (\n    <div>\n      <h1>Hello World</h1>\n    </div>\n  );\n}\n\nexport default Index;\n```"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercise 1\n\n1. **Set Up a New React Project:**\n   - Use Vite to create a new React project.\n\n2. **Create a Welcome Page Component:**\n   - Develop a React component that serves as a Welcome page, displaying a greeting message and introduction.\n\n3. **Render the Welcome Page:**\n   - Ensure the Welcome page component is rendered as the main component when the application runs."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Example 2:\n\n1. **Initialize State:**\n   - Create a React component that uses the `useState` hook to manage a boolean state, which tracks whether the component is \"ON\" or \"OFF.\"\n\n2. **Implement Toggle Functionality:**\n   - Develop a function within the component to toggle the state between `true` and `false` when a button is clicked.\n\n3. **Render the Button:**\n   - Display a button that dynamically shows \"ON\" or \"OFF\" based on the current state, and updates when clicked.\n\n\n```javascript\nimport React, { useState } from \"react\";\n\nfunction ToggleButton() {\n  const [isOn, setIsOn] = useState(false);\n\n  const toggle = () => {\n    setIsOn(!isOn);\n  };\n\n  return (\n    <div>\n      <button onClick={toggle}>{isOn ? \"ON\" : \"OFF\"}</button>\n    </div>\n  );\n}\n\nexport default ToggleButton;\n```\n\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Exercise 2\n\nCreate a simple counter app using React + Vite\n- Develop a React component that displays a numerical counter on the screen.\n- Use the useState hook to manage the counter’s value within the component.\n- Create buttons that allow the user to increase or decrease the counter value when clicked.\n- Ensure your counter component is displayed as the main feature of the application."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Homework"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Homework 1: \n// Build a TemperatureConverter component that converts temperatures between Celsius and Fahrenheit. The user should be able to input a temperature in either unit, and the equivalent value in the other unit should be displayed."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Homework 2:\n// Build an application with background color changing feature (with onclick method) "
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Homework 3:\n// Create a SimpleCalculator component that allows users to perform basic arithmetic operations (addition, subtraction, multiplication, and division) between two numbers. Include two input fields for the numbers and buttons for each operation. Display the result when an operation is selected."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "## Questions"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "\n### Is App.css necessarily required in a React project?\n\nProvide your answer here."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### Which CSS files generally declares global styling rules?\n\nProvide your answer here."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### In a React project, what is the typical role of the App.jsx file?\n\nProvide your answer here"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### 1. What is React primarily used for?\n- a) Server-side rendering\n- b) Building user interfaces\n- c) Database management\n- d) File handling\n\n\n\n---\n\n### 2. Which of the following methods is used to render a React component into the DOM?\n- a) ReactDOM.append()\n- b) ReactDOM.render()\n- c) React.render()\n- d) React.renderComponent()\n\n\n\n---\n\n### 3. What is the purpose of `useState` in React?\n- a) To manage component lifecycle events\n- b) To handle side effects in functional components\n- c) To add interactivity by managing state in functional components\n- d) To create new components\n\n\n\n---\n\n### 4. Which of the following is a correct way to import a React component?\n- a) `import { Component } from './Component';`\n- b) `import Component from './Component.jsx';`\n- c) `import * from './Component.jsx';`\n- d) `import './Component';`\n\n\n\n---\n\n### 5. What is the significance of the `key` prop in a list of React elements?\n- a) To optimize re-rendering of list elements\n- b) To set the CSS style for the list elements\n- c) To track user interactions with list elements\n- d) To pass data to each list element\n\n\n\n---\n\n### 6. Which of the following is a common way to handle form submission in React?\n- a) Using `handleSubmit` method and preventing default behavior\n- b) Submitting forms directly without any JavaScript handling\n- c) Storing form data in local storage\n- d) Using the `submit()` function provided by React\n\n\n\n---\n\n### 7. What does JSX stand for?\n- a) JavaScript XML\n- b) JavaScript eXtension\n- c) JSON XML\n- d) JavaScript eXtra\n\n\n\n---\n\n### 8. How do you create a functional component in React?\n- a) By extending `React.Component`\n- b) By using a function that returns JSX\n- c) By using `createElement()`\n- d) By invoking `render()` method\n\n\n\n---\n\n### 9. Which hook would you use to execute a piece of code after every render of a functional component?\n- a) `useState`\n- b) `useEffect`\n- c) `useContext`\n- d) `useReducer`\n\n\n\n---\n\n### 10. What is the role of `props` in React?\n- a) To pass data from one component to another\n- b) To manage state within a component\n- c) To trigger re-renders in components\n- d) To define CSS styles within components\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
